@@ -10,8 +10,8 @@ if util.me.enable() then
   util.add_ingredient("tungsten-carbide", util.me.carbon(), 1)
   util.set_to_founding("cuw")
 
-  util.set_to_founding("silicon")
-  util.add_ingredient("silicon", util.me.carbon(), 1)
+  util.set_to_founding(mods.Krastorio2 and "kr-silicon" or "silicon")
+  util.add_ingredient(mods.Krastorio2 and "kr-silicon" or "silicon", util.me.carbon(), 1)
 
   util.set_to_founding("cermet")  -- from zirconium
   util.set_to_founding("crucible") -- from graphite

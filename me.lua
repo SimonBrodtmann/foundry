@@ -23,14 +23,15 @@ function me.enable()
 end
 
 function me.carbon()
+  if mods["Krastorio2"] then return "kr-coke" end
   if me.get_setting("bz-all-intermediates") then return "coke" end
   return me.get_setting("bzfoundry-hydrocarbon")
 end
 
 function me.carbonrecipe()
   local carbon = me.carbon()
-  if carbon == "coke" then
-    return "coke"
+  if carbon == "coke" or carbon == "kr-coke" then
+    return me.carbon()
   elseif carbon == "solid-fuel" then
     return "solid-fuel-from-coal"
   end

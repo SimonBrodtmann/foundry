@@ -11,8 +11,8 @@ data:extend({
 		type = "string-setting",
 		name = "bzfoundry-hydrocarbon",
 		setting_type = "startup",
-    allowed_values = {"coke", "solid-fuel", "coal", "none"},
-		default_value = "coke",
+    allowed_values = {mods["Krastorio2"] and "kr-coke" or "coke", "solid-fuel", "coal", "none"},
+		default_value = mods["Krastorio2"] and "kr-coke" or "coke",
     order = "aba",
 	},
   {

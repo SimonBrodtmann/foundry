@@ -1,11 +1,13 @@
 local util = require("data-util")
 
-local foundry_ingredients = {{"stone-brick", 20}, {"iron-plate", 10}, {"copper-plate", 5}}
-if mods.bzlead then table.insert(foundry_ingredients, {"lead-plate", 8}) end
-if mods.Krastorio2 or mods["aai-industry"] then
-  table.insert(foundry_ingredients, {"sand", 10})
+local foundry_ingredients = {{type="item", name="stone-brick", amount=20}, {type="item", name="iron-plate", amount=10}, {type="item", name="copper-plate", amount=5}}
+if mods.bzlead then table.insert(foundry_ingredients, {type="item", name="lead-plate", amount=8}) end
+if mods.Krastorio2 then
+  table.insert(foundry_ingredients, {type="item", name="kr-sand", amount=10})
+elseif mods["aai-industry"] then
+  table.insert(foundry_ingredients, {type="item", name="sand", amount=10})
 elseif data.raw.item["silica"] and data.raw.technology["silica-processing"] then
-  table.insert(foundry_ingredients, {"silica", 20})
+  table.insert(foundry_ingredients, {type="item", name="silica", amount=20})
 end
 
 data:extend({
@@ -22,9 +24,9 @@ data:extend({
   {
     type = "recipe",
     name = "foundry",
-    result = "foundry",
     enabled = false,
     ingredients = foundry_ingredients,
+    results = {{ type = "item", name = "foundry", amount = 1 }}
   },
   {
     type = "technology",
@@ -61,7 +63,7 @@ data:extend({
     type = "item",
     name = "electric-foundry",
     icon = "__bzfoundry__/graphics/icons/electric-foundry.png",
-    icon_size = 128,
+    icon_size = 64,
     subgroup = "founding-machines",
     order = "z[foundryelectric]",
     place_result = "electric-foundry",
@@ -76,16 +78,16 @@ data:extend({
 	},
     type = "recipe",
     name = "electric-foundry",
-    result = "electric-foundry",
     enabled = false,
     ingredients = {
-      {"foundry", 1},
-      {"steel-plate", 10},
-      {"processing-unit", 4},
-      {"concrete", 10},
-      (data.raw.item["zirconia"] and {"zirconia", 10} or {"stone-brick", 10}), 
-      (data.raw.item["tungsten-plate"] and {"tungsten-plate", 5} or nil),
+      {type="item", name="foundry", amount=1},
+      {type="item", name="steel-plate", amount=10},
+      {type="item", name="processing-unit", amount=4},
+      {type="item", name="concrete", amount=10},
+      (data.raw.item["zirconia"] and {type="item", name="zirconia", amount=10} or {type="item", name="stone-brick", amount=10}),
+      (data.raw.item["tungsten-plate"] and {type="item", name="tungsten-plate", amount=5} or nil),
     },
+    results = {{ type = "item", name = "electric-foundry", amount = 1 }}
   },
   {
     type = "technology",

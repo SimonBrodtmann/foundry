@@ -1,19 +1,20 @@
 {
     "name": "bzfoundry",
-    "version": "0.2.14",
-    "factorio_version": "1.1",
+    "version": "2.0.0",
+    "factorio_version": "2.0",
     "title": "Foundry",
     "author": "Brevven",
     "contact": "",
     "homepage": "",
     "dependencies": [
-      "? space-exploration",
-      "(?) Krastorio2",
-      "? bzsilicon",
+      "base >= 2.0.0",
+      "rusty-locale >= 1.0.17",
+      "? space-exploration >= 0.7.34",
+      "(?) Krastorio2 >= 2.0.8",
+      "? bzsilicon >= 2.0.18",
       "? bztungsten",
-      "? bzzirconium",
-      "rusty-locale",
-      "base >= 1.1.0"
+      "? bzzirconium >= 2.1.13",
+      "! space-age"
     ],
     "description": "Adds a foundry building for making alloys, etc.\n\nA standalone accessory from BZ Mods."
 }

@@ -12,9 +12,11 @@ This work is released under a CC license instead of MIT. Contact me on github if
 Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) 
 See LICENSE
 
-## Created by
+## Credits
 
-- [brevven](https://mods.factorio.com/user/brevven) (code, design, graphics)
+- [brevven](https://mods.factorio.com/user/brevven) (code, design)
+- [cackling fiend](https://mods.factorio.com/user/cackling.fiend) (Update to 2.0)
+- Wube (Graphics)
 
 ### Localization
 
